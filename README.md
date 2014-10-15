@@ -4,6 +4,10 @@ Memory game is a game built for fun, using HTML, CSS, and JavaScript. The object
 
 The game itself built entirely with JavaScript, so you can just drop it into your site / app into any element you like. The making of this game was inspired by [this pen](http://codepen.io/natewiley/pen/HBrbL), but I went about it using plain JS, and making 3 different levels. Because it's all front end tech in action, it should work across all devices, tablets, etc.
 
+## Demo
+
+A working demo can be seen here - [http://callmenick.com/memory/](http://callmenick.com/memory/)
+
 ## Usage
 
 Usage is easy. Just markup the div you want Memory to exist in, and create a new instance of Memory.

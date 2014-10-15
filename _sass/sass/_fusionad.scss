@@ -1,0 +1,48 @@
+/* =============================================================================
+  FUSION ADS
+============================================================================= */
+
+/**
+ * Fusion ads styles
+ *
+ * These are all the styles for my fusion ads. I'd reccommend deleting them if
+ * you are going to use this in your own app, because they are useless and you
+ * shouldn't be displaying my ad on your app/site in the first place. Thanks!
+ */
+
+#fusionads {
+  display: inline-block;
+  padding: 5px;
+  background: rgb(255,255,255);
+  font-size: $font-size--xxsmall;
+  line-height: $line-height--small;
+  text-align: left;
+}
+
+#fusionads .fusion-wrap {
+  display: block;
+  margin: 0 0 5px 0;;
+  width: 130px;
+}
+
+#fusionads a.fusion-text {
+  display: block;
+  color: $color--grey;
+}
+
+#fusionads a.fusion-img {
+  display: block;
+  margin-bottom: 5px;
+  width: 130px;
+  height: 100px;
+  background-color: #fff;
+}
+
+#fusionads a.fusion-img img {
+  display: block;
+  margin: 0 0 10px 0;
+}
+
+#fusionads a.fusion-poweredby {
+  color: $color--blue;
+}

@@ -1,0 +1,92 @@
+/* =============================================================================
+  LAYOUT
+============================================================================= */
+
+/* wrapper */
+
+.wrapper {
+  margin: 0 auto;
+  width: 100%;
+  min-width: 480px;
+}
+
+/* container */
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1024px;
+}
+
+/* header */
+
+.header {
+  padding: 10px 10px 10px 40px;
+}
+
+.header__logo {
+  float: left;
+  margin-left: -30px;
+  width: 30px;
+  height: 30px;
+}
+
+.header__title {
+  float: right;
+  color: #fff;
+  font-size: $font-size--medium;
+  line-height: 30px;
+}
+
+/* content */
+
+.content {
+  padding: 20px;
+  background-color: #fff;
+}
+
+/* footer */
+
+.footer {
+  padding: 20px;
+  font-size: $font-size--small;
+}
+
+.footer__left,
+.footer__right {
+  width: 50%;
+}
+
+.footer__left {
+  float: left;
+}
+
+.footer__right {
+  float: right;
+  text-align: right;
+}
+
+.footer__title {
+  margin-bottom: 10px;
+  color: $color--dkblue;
+}
+
+.footer__social {
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.footer__social--heading {
+  margin-bottom: 5px;
+}
+
+.footer__copyright {
+  color: #fff;
+  a {
+    color: $color--dkblue;
+  }
+}
+
+.footer__social--icons {
+  
+}

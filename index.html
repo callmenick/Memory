@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- meta -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <meta name="description" content="A memory game, built for fun with HTML, CSS, and JavaScript.">
+  <meta name="author" content="Nick Salloum">
+
+  <!-- title -->
+  <title>Memory Game!</title>
+
+  <!-- css -->
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto+Slab">
+  <link rel="stylesheet" href="css/memory.min.css">
+
+  <!-- og -->
+
+</head>
+<body>
+  
+  <div class="wrapper">
+    
+    <div class="header clearfix">
+      <div class="header__logo">
+        <img src="img/logo.png" alt="Call Me Nick - Tutorials, Snippets, Resources, and Articles for Web Design and Web Development">
+      </div>
+      <h1 class="header__title">Memory Game!</h1>
+    </div><!-- /.header -->
+    
+    <div class="content">
+      <div class="container">
+        
+        <div id="my-memory-game"></div>
+
+      </div>
+    </div><!-- /.content -->
+
+    <div class="footer clearfix">
+      <div class="footer__left">
+        <h2 class="footer__title">Memory Game!</h2>
+        <div class="footer__social">
+          <h3 class="footer__social--heading">Star or fork on GitHub:</h3>
+          <div id="footer__social--icons-github" class="footer__social--icons"></div>
+        </div>
+        <div class="footer__social">
+          <h3 class="footer__social--heading">Share / Tweet:</h3>
+          <div class="footer__social--icons">
+            <div class="fb-like" data-href="http://callmenick.com/memory" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
+            <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://callmenick.com/memory" data-via="nicksalloum_">Tweet</a>
+          </div>
+        </div>
+        <div class="footer__copyright">
+          <small>
+            Made for fun by:<br>
+            <a href="http://callmenick.com">callmenick.com</a>
+          </small>
+        </div>
+      </div>
+      <div class="footer__right">
+        <div id="footer__ad--container"></div>
+      </div>
+    </div><!-- /.footer -->
+
+  </div><!-- /.wrapper -->
+  
+  <!-- js -->
+  <script src="js/classList.min.js"></script>
+  <script src="js/memory.js"></script>
+
+  <!-- start memory! -->
+  <script>
+    (function(){
+      var myMem = new Memory({
+        wrapperID : "my-memory-game",
+        cards : [
+          {
+            id : 1,
+            img: "img/default/monsters-01.png"
+          },
+          {
+            id : 2,
+            img: "img/default/monsters-02.png"
+          },
+          {
+            id : 3,
+            img: "img/default/monsters-03.png"
+          },
+          {
+            id : 4,
+            img: "img/default/monsters-04.png"
+          },
+          {
+            id : 5,
+            img: "img/default/monsters-05.png"
+          },
+          {
+            id : 6,
+            img: "img/default/monsters-06.png"
+          },
+          {
+            id : 7,
+            img: "img/default/monsters-07.png"
+          },
+          {
+            id : 8,
+            img: "img/default/monsters-08.png"
+          },
+          {
+            id : 9,
+            img: "img/default/monsters-09.png"
+          },
+          {
+            id : 10,
+            img: "img/default/monsters-10.png"
+          },
+          {
+            id : 11,
+            img: "img/default/monsters-11.png"
+          },
+          {
+            id : 12,
+            img: "img/default/monsters-12.png"
+          },
+          {
+            id : 13,
+            img: "img/default/monsters-13.png"
+          },
+          {
+            id : 14,
+            img: "img/default/monsters-14.png"
+          },
+          {
+            id : 15,
+            img: "img/default/monsters-15.png"
+          },
+          {
+            id : 16,
+            img: "img/default/monsters-16.png"
+          }
+        ],
+        onGameStart : function() { return false; },
+        onGameEnd : function() { return false; }
+      });
+    })();
+  </script>
+  
+  <!-- ads, fb, twitter, github -->
+  <script>
+    (function(){
+      var fusoionad_script = document.createElement("script");
+      fusoionad_script.type = "text/javascript";
+      fusoionad_script.async = true;
+      fusoionad_script.id = "_fusionads_js";
+      fusoionad_script.src = "http://cdn.fusionads.net/fusion.js?zoneid=1332&serve=C6SDP2Y&placement=callmenickcom";
+      document.getElementById("footer__ad--container").appendChild(fusoionad_script);
+    })();
+
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=222982931164932&version=v2.0";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+
+    (function(){
+      var gitFork = document.createElement("iframe");
+      gitFork.setAttribute( "src", "http://ghbtns.com/github-btn.html?user=callmenick&repo=Memory&type=fork&count=true" );
+      gitFork.setAttribute( "allowtransparency", "true" );
+      gitFork.setAttribute( "frameborder", "0" );
+      gitFork.setAttribute( "scrolling", "0" );
+      gitFork.style.width = "95px";
+      gitFork.style.height = "20px";
+      document.getElementById("footer__social--icons-github").appendChild(gitFork);
+
+      var gitWatch = document.createElement("iframe");
+      gitWatch.setAttribute( "src", "http://ghbtns.com/github-btn.html?user=callmenick&repo=Memory&type=watch&count=true" );
+      gitWatch.setAttribute( "allowtransparency", "true" );
+      gitWatch.setAttribute( "frameborder", "0" );
+      gitWatch.setAttribute( "scrolling", "0" );
+      gitWatch.style.width = "110px";
+      gitWatch.style.height = "20px";
+      document.getElementById("footer__social--icons-github").appendChild(gitWatch);
+    })();
+  </script>
+
+  <div id="fb-root"></div>
+
+</body>
+</html>

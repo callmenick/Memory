@@ -1,0 +1,253 @@
+/* =============================================================================
+  MEMORY GAME (mg)
+============================================================================= */
+
+/**
+ * Game container
+ *
+ * This is the overall container for the game. Different things get addead and
+ * removed from this container depending on the game state.
+ */
+
+.mg {
+  /* blank */
+}
+
+/**
+ * Game meta
+ *
+ * The game meta is the section that displays the level and moves. It's appended
+ * to the game container at the start, and shows the level the user selected
+ * and the number of moves the user has played.
+ */
+
+.mg__meta {
+  margin-bottom: 10px;
+  color: $color--blue;
+}
+
+.mg__meta--item {
+  display: inline-block;
+}
+
+.mg__meta--left {
+  float: left;
+}
+
+.mg__meta--right {
+  float: right;
+}
+
+.mg__meta--level {
+  margin-right: 20px;
+}
+
+.mg__meta--moves {
+  
+}
+
+/**
+ * Game start screen
+ *
+ * The game start screen shows the "welcome" message and also a list for the
+ * user to choose a level. It's appended to the game container at the start,
+ * and once the user selects a level, it is removed from the container
+ */
+
+.mg__start-screen {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.mg__start-screen--heading {
+  margin-bottom: 10px;
+  color: $color--dkgrey;
+  font-size: $font-size--xlarge;
+}
+
+.mg__start-screen--sub-heading {
+  font-size: $font-size--large;
+  margin-bottom: 10px;
+  color: $color--blue;
+  &::before,
+  &::after {
+    margin: 0 5px;
+    content: "-";
+  }
+}
+
+.mg__start-screen--text {
+  margin-bottom: 20px;
+}
+
+.mg__start-screen--level-select {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  span {
+    color: $color--red;
+    font-size: $font-size--medium;
+    cursor: pointer;
+    &:hover {
+      color: $color--dkred;
+    }
+  }
+}
+
+/**
+ * Game wrapper
+ *
+ * The game wrapper is where the actual game resides. Inside here, all the
+ * memory tiles get arranged and ready for game play.
+ */
+
+.mg__wrapper {
+  margin: 0 auto;
+  width: 100%;
+  
+}
+
+.mg__contents {
+  position: relative;
+  padding-bottom: 50%;
+  margin-left: -5px;
+  margin-right: -5px;
+}
+
+/**
+ * Game tiles
+ *
+ * The game tiles are the tiles that are laid down on the memory game board.
+ * These tiles are the ones that the user clicks on to flip and reveal some
+ * images. The level the user selects determines the position and size of
+ * the tiles.
+ */
+
+.mg__tile {
+  position: absolute;
+  padding: 5px;
+}
+
+@each $level, $tiles in $levels {
+
+  $y : sqrt($tiles/2);
+  $x : $tiles/$y;
+
+  /* game__level-#{$level} styles */
+  .mg__level-#{$level} .mg__tile {
+    width: (1 / $x) * 100%;
+    height: (1 / $y) * 100%;
+  }
+
+  .mg__level-#{$level} {
+    @for $i from 1 through $tiles {
+      $top : (floor(($i - 1) / $x) / $y) * 100%;
+      $left : ((($i - 1) % $x) / $x) * 100%;
+      .mg__tile-#{$i} {
+        top: $top;
+        left: $left;
+      }
+    }
+  }
+ 
+}
+
+/**
+ * The tile inside
+ *
+ * The "tile inner" is the part of the tile that serves as the card. Inside
+ * this part, there's an outside and inside part. The outside of the card
+ * is the part that has the logo or the pattern or whatever...basically the
+ * part that doesn't show the content to be matched. The inside part has the
+ * actual images / info to be matched.
+ */
+
+.mg__tile--inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.mg__tile--outside,
+.mg__tile--inside {
+  display: block;
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.mg__tile--outside {
+  background: url('../img/default/logo-bw.png') 50% 50% no-repeat;
+  background-color: $color--ltgrey;
+  box-shadow: 0 0 0 1px $color--grey;
+}
+
+.mg__tile--inside {
+  background-color: $color--xltgrey;
+  box-shadow: 0 0 0 1px $color--grey;
+  transform: rotateY(-180deg);
+}
+
+/* some transforms for flipped cards */
+
+.mg__tile--inner.flipped .mg__tile--outside {
+  transform: rotateY(-180deg);
+}
+
+.mg__tile--inner.flipped .mg__tile--inside {
+  transform: rotateY(0);
+}
+
+/* some transitions for correct guesses - only needs to happen on card inside */
+
+.mg__tile--inner.flipped.correct .mg__tile--inside {
+  background-color: $color--yellow;
+}
+
+/**
+ * Game message
+ *
+ * The game message area is an area to display game messages. It's used in the
+ * default set up where no callback is set in the JS. If a callback is set up,
+ * then this message area likely won't display. Unless you decide to display it
+ * in your own custom callback though!
+ */
+
+.mg__onend {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.mg__onend--heading {
+  margin-bottom: 10px;
+  color: $color--blue;
+  font-size: $font-size--xlarge;
+}
+
+.mg__onend--message {
+  margin-bottom: 10px;
+}
+
+/**
+ * Game buttons
+ *
+ * A simple helper class for game buttons. Edit at your will.
+ */
+.mg__button {
+  margin: 0;
+  display: inline-block;
+  padding: 5px;
+  color: #fff;
+  font-family: $font-family--primary;
+  font-size: $font-size--small;
+  appearance: none;
+  background: $color--red;
+  border: none;
+  border-radius: 3px;
+  box-shadow: none;
+  cursor: pointer;
+}

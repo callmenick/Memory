@@ -1,0 +1,63 @@
+// font families
+
+$font-family--primary : 'Roboto Slab', serif;
+
+// font sizes
+
+$font-size--xxsmall : 11px;
+$font-size--xsmall : 12px;
+$font-size--small : 14px;
+$font-size--medium : 18px;
+$font-size--large : 24px;
+$font-size--xlarge : 30px;
+$font-size--xxlarge : 36px;
+
+// line heights
+
+$line-height--small : 1.2;
+$line-height--medium : 1.5;
+$line-height--large : 1.8;
+
+// colours
+
+$color--dkgrey : rgb(40,42,47);
+$color--grey : rgb(120,122,128);
+$color--ltgrey : rgb(220,222,225);
+$color--xltgrey : rgb(248,250,252);
+
+$color--blue : rgb(40,170,220);
+$color--dkblue : darken($color--blue, 20%);
+$color--ltblue : lighten($color--blue, 20%);
+
+$color--red : rgb(255,60,80);
+$color--dkred : darken($color--red, 20%);
+$color--ltred : lighten($color--red, 20%);
+
+$color--green : rgb(145,251,173);
+
+$color--yellow : rgb(255,255,220);
+
+// game config variables
+
+$tile--transition-time : 0.2s;
+
+// levels -> used in _modules
+//
+// mapped out like:
+// LEVEL NUM : GRID LENGTH
+//
+// level 1 - 4 x 2 grid
+// level 2 - 6 x 3 grid
+// level 3 - 8 x 4 grid
+//
+// Add more levels if you want, but make sure you adjust the following:
+//
+// 1. Make sure grid aspect ratio is 2:1
+// 2. Make sure to allow more level selection on the start screen HTML
+// 3. Make sure that you add images for new levels
+
+$levels : (
+  1 : 8,
+  2 : 18,
+  3 : 32
+);

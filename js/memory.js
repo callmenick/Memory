@@ -286,10 +286,10 @@
    *
    * This renders the actual tiles with content. A few thing happen here:
    *
-   * 1. The cards object gets shuffled
-   * 2. The cards object gets truncated
-   * 3. Each member of the cards object gets doubled and added to the object
-   * 4. Cards object gets shuffled again
+   * 1. Calculate grid X and Y based on user level selection
+   * 2. Calculate num tiles
+   * 3. Create new cards array based on level, and draw cards from original array
+   * 4. Shuffle the new cards array
    * 5. Cards get distributed into tiles
    * 6. gamePlay function gets triggered, taking care of all the game play action.
    */
@@ -488,9 +488,9 @@
     var self = this;
     if (this.options.onGameEnd() === false) {
       this._clearGame();
-      this.gameMessages.innerHTML = '<h2 class="mg__onend--heading">Sweet!</h2>';
-      this.gameMessages.innerHTML += '<p class="mg__onend--message">You won the round in ' + this.numMoves + ' moves. Go you.</p>';
-      this.gameMessages.innerHTML += '<button id="mg__onend--restart" class="mg__button">Play again?</button>';
+      this.gameMessages.innerHTML = '<h2 class="mg__onend--heading">Sweet!</h2>\
+        <p class="mg__onend--message">You won the round in ' + this.numMoves + ' moves. Go you.</p>\
+        <button id="mg__onend--restart" class="mg__button">Play again?</button>';
       this.game.appendChild(this.gameMessages);
       document.getElementById("mg__onend--restart").addEventListener( "click", function(e) {
         self.resetGame();
@@ -514,16 +514,6 @@
     this._clearGame();
     this._setupGame();
   };
-
-  /**
-   * Memory _cards
-   *
-   * This is the actuall cards set up. It comprises of 16 unique cards. The 
-   * number 16 is determined by the maximum number of tiles / 2. In the default
-   * case, there's a maximum of 32 tiles on a 8 x 4 grid. The reason for using
-   * 16 is so that we can shuffle the array, trim it to the required size, then
-   * double it and distribute it.
-   */
 
   /**
    * Add Memory to global namespace

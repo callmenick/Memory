@@ -31,7 +31,7 @@ html {
 
 body {
   color: #787a80;
-  background-color: #28aadc;
+  background-color: #DC9528;
   font-family: "Roboto Slab", serif;
   font-size: 18px;
 }
@@ -86,7 +86,7 @@ img {
 
 .header__title {
   float: right;
-  color: #fff;
+  color: #ff00;
   font-size: 18px;
   line-height: 30px;
 }
@@ -160,7 +160,7 @@ img {
  */
 .mg__meta {
   margin-bottom: 10px;
-  color: #28aadc;
+  color: #DC9528;
 }
 
 .mg__meta--item {
@@ -200,7 +200,7 @@ img {
 .mg__start-screen--sub-heading {
   font-size: 24px;
   margin-bottom: 10px;
-  color: #28aadc;
+  color: #DC9528;
 }
 .mg__start-screen--sub-heading::before, .mg__start-screen--sub-heading::after {
   margin: 0 5px;
@@ -583,7 +583,7 @@ img {
 
 .mg__onend--heading {
   margin-bottom: 10px;
-  color: #28aadc;
+  color: #DC9528;
   font-size: 30px;
 }
 
@@ -668,5 +668,5 @@ img {
 }
 
 #fusionads a.fusion-poweredby {
-  color: #28aadc;
+  color: #DC9528;
 }
